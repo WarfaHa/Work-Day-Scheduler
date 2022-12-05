@@ -2,6 +2,7 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 
+// Global Variables
 // Displays current Day and Time
 var timeDisplayEl = $('#currentDay');
 
@@ -15,6 +16,52 @@ function displayTime() {
 // Set an interval for the time to update every second
 displayTime();
 setInterval(displayTime, 1000);
+
+$(document).ready(function () {
+
+$(".saveBtn").on("click", function() {
+  console.log("save button works");
+
+  var text = $(this).siblings(".description").val();
+        var time = $(this).parent().attr("id");
+
+        // Save text in local storage
+        
+    })
+
+});
+function timeTracker() {
+  //get current number of hours.
+  var currentHour = dayjs().hour();
+console.log(currentHour);
+  // loop over time blocks
+  $(".time-block").each(function () {
+      var blockTime = parseInt($(this).attr("id").split("hour")[1]*(-1));
+      console.log(blockTime);
+      // To check the time and add the classes for background indicators
+      if (blockTime < currentHour) {
+          $(this).removeClass("future");
+          $(this).removeClass("present");
+          $(this).addClass("past");
+      }
+      else if (blockTime === currentHour) {
+          $(this).removeClass("past");
+          $(this).removeClass("future");
+          $(this).addClass("present");
+      }
+      else {
+          $(this).removeClass("present");
+          $(this).removeClass("past");
+          $(this).addClass("future");
+
+      }
+  })
+}
+
+// Get item from local storage if any
+
+timeTracker();
+
 
 $(function () {
   // TODO: Add a listener for click events on the save button. This code should
