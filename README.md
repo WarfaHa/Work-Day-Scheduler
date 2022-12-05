@@ -14,10 +14,10 @@ This week, we had to create a simple calendar application that allows a user to 
 
 ## Screenshot
 
-![Screenshot-of-Portfolio](/assets/GeneratorScreenshot.png)
+![Screenshot-of-Portfolio](/assets/Screenshot.PNG)
 
 Deployed Site:
-
+https://warfaha.github.io/Work-Day-Scheduler/
 
 ## Installation
 
